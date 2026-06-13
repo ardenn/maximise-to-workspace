@@ -97,6 +97,31 @@ journalctl -f /usr/bin/gnome-shell
 
 ---
 
+## Releasing
+
+GNOME Extensions uses a plain integer `version` in `metadata.json` — increment it by 1 for each submission. No SemVer is required or supported.
+
+**Steps:**
+
+1. Bump `version` in `metadata.json` and commit.
+2. Push a version tag — CI will build the zip and attach it to a GitHub Release automatically:
+   ```bash
+   git tag v<n>
+   git push origin v<n>
+   ```
+3. Download the zip from the GitHub Release page.
+4. Upload it to [extensions.gnome.org](https://extensions.gnome.org):
+   - First release: **Your Extensions → New Extension**
+   - Subsequent releases: **Upload new version**
+5. Await manual review from the EGO team.
+
+To build the zip locally without tagging:
+```bash
+bash scripts/package.sh
+```
+
+---
+
 ## Testing checklist
 
 - [ ] Two windows on workspace 0 → maximise one → it moves to workspace 1, focus follows
