@@ -1,0 +1,6 @@
+{
+  "name": "Maximise to Workspace",
+  "description": "Moves maximised or fullscreen windows to a dedicated empty workspace.",
+  "uuid": "maximise-to-workspace@ardenn.github.io",
+  "shell-version": ["45", "46", "47", "48", "49", "50"]
+}
